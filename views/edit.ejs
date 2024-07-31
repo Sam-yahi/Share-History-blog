@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Your Story</title>
+  <link rel="stylesheet" href="/style/style.css">
+</head>
+<body>
+  <form action="/update/<%= blog.id %>" method="POST">
+    <input type="text" name="fName" value="<%= blog.namee %>" placeholder="Your name">
+    <!-- Note: Not handling file upload for simplicity -->
+    <input type="text" name="title" value="<%= blog.title %>" placeholder="Your title">
+    <textarea name="blog" placeholder="Your blog"><%= blog.content %></textarea>
+    <input type="submit" value="Update">
+  </form>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Write Your Story</title>
+  <link rel="stylesheet" href="/style/edit.css">
+</head>
+<body>
+  <%- include("header.ejs") %>
+  <section class="write">
+
+    <div class="image-container-write">
+     
+    </div>
+
+    <div class="form-container">
+      <form action="/submit" method="POST" enctype="multipart/form-data">
+        <div class="input-data">
+          <label for="">Name</label>
+          <input type="text" name="fName" placeholder="Your name">
+        </div>
+        <div class="input-data">
+          <label for="">Upload Image</label>
+              <input type="file" id="myFile" name="img">
+        </div>
+
+        <div class="input-data">
+          <label for="">Title</label>
+          <input type="text" name="title" placeholder="Your title">
+        </div>
+
+        <div class="input-blog">
+          <label for="">Your Blog</label>
+          <textarea name="blog" id=""></textarea>
+        </div>
+      
+        
+        
+        <button class="btn">Submit</button>
+      </form>
+  
+    </div>
+
+</section>
+</body>
+</html>

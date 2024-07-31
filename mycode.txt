@@ -1,0 +1,47 @@
+import express from "express";
+import bodyParser from "body-parser";
+import { dirname } from "path";
+import { fileURLToPath } from "url";
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+
+const app = express();
+const port = 3000;
+
+// Set the view engine to EJS
+app.set("view engine", "ejs");
+
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static("public"));
+
+app.get("/", (req, res) => {
+  res.render("index", { 
+    namee: "" ,
+    content: "",
+    title :"",
+    image :"",
+
+  });
+});
+
+app.get("/write.ejs", (req, res) => {
+  res.render("write.ejs");
+});
+
+app.post("/submit", (req, res) => {
+  let name = req.body['fName'];
+  let text = req.body['blog'] ;
+  let titre = req.body['title'] ;
+  let img = req.body['img'] ;
+  res.render("index", { 
+    namee: name ,
+    content: text,
+    title: titre,
+    image: img,
+
+  });
+});
+
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`);
+});

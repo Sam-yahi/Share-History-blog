@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>read Your Story</title>
+  <link rel="stylesheet" href="/style/style.css">
+</head>
+<body>
+  <%- include("header.ejs") %>
+<div class="parallax" style="background-image: url('<%= blog.image %>');"></div>
+
+
+<div class="reading-content">
+ 
+<h1><%= blog.title %></h1>
+
+<p>  <%= blog.content %></p>
+<p>Written By:</p>
+<h3>  <%= blog.namee %></h3>
+  </div>
+  
+
+    <!-- Note: Not handling file upload for simplicity -->
+
+
+  <div class="card-actions-read">
+    <button><a href="/edit/<%= blog.id %>">Edit</a></button>
+    <form action="/delete/<%= blog.id %>" method="POST" style="display:inline;">
+      <button type="submit">Delete</button>
+    </form>
+  
+  </div>
+</body>
+</html>
